@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<head>
+		<title>Home</title>
+		
+		<link rel="stylesheet" href="webjars/bootstrap/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+		<link rel="stylesheet" href="webjars/font-awesome/css/all.css" th:href="@{/webjars/font-awesome/css/all.css}" />
+	</head>
+	
+	<body>
+	<!-- Page Content -->
+	<div class="container" th:fragment="content" layout:fragment="content">
+		<h1>Triggers AutoReturn Event</h1>
+		<div class="login-dark">
+			<form class="form-general" th:action="@{/register}" th:object="${registrationARForm}" method="post" role="form">
+				<div th:if="${#fields.hasErrors('*')}" class="card text-white bg-danger mb-3">
+					<div class="card-body">
+						<p class="mb-0" th:each="error: ${#fields.errors('*')}" th:text="${error}">Validation error</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userName}" placeholder="User Name" class="form-control translucent" autofocus required /> 
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userFirstName}" placeholder="First Name" class="form-control translucent" required /> 
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userLastName}" placeholder="Last Name" class="form-control translucent" required />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-envelope white"></i></span>
+	        			</div>
+	        			<input type="email" th:field="*{userEmail}" placeholder="Email Address" class="form-control translucent" required />    	
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<button class="btn btn-primary btn-block push_button blue translucent"
+						type="submit">Register</button>
+				</div>
+			</form>
+		</div>
+		
+		
+		<h1>Triggers Publisher Event</h1>
+		<div class="login-dark">
+			<form class="form-general" th:action="@{/registerPublisher}" th:object="${registrationPForm}" method="post" role="form">
+				<div th:if="${#fields.hasErrors('*')}" class="card text-white bg-danger mb-3">
+					<div class="card-body">
+						<p class="mb-0" th:each="error: ${#fields.errors('*')}" th:text="${error}">Validation error</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userName}" placeholder="User Name" class="form-control translucent" autofocus required /> 
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userFirstName}" placeholder="First Name" class="form-control translucent" required /> 
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userLastName}" placeholder="Last Name" class="form-control translucent" required />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-envelope white"></i></span>
+	        			</div>
+	        			<input type="email" th:field="*{userEmail}" placeholder="Email Address" class="form-control translucent" required />    	
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<button class="btn btn-primary btn-block push_button blue translucent"
+						type="submit">Register</button>
+				</div>
+			</form>
+		</div>
+		
+		
+		<h1>Triggers Publisher Common Event</h1>
+		<div class="login-dark">
+			<form class="form-general" th:action="@{/registerPublisherCommon}" th:object="${registrationPCForm}" method="post" role="form">
+				<div th:if="${#fields.hasErrors('*')}" class="card text-white bg-danger mb-3">
+					<div class="card-body">
+						<p class="mb-0" th:each="error: ${#fields.errors('*')}" th:text="${error}">Validation error</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userName}" placeholder="User Name" class="form-control translucent" autofocus required /> 
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userFirstName}" placeholder="First Name" class="form-control translucent" required /> 
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-user white"></i></span>
+	        			</div>
+	        			<input type="text" th:field="*{userLastName}" placeholder="Last Name" class="form-control translucent" required />
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+	          				<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-envelope white"></i></span>
+	        			</div>
+	        			<input type="email" th:field="*{userEmail}" placeholder="Email Address" class="form-control translucent" required />    	
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<button class="btn btn-primary btn-block push_button blue translucent"
+						type="submit">Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>
